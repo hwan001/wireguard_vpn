@@ -1,9 +1,6 @@
 #!/bin/bash
-
-VPN_SERVER_PATH=/etc/wireguard/server
-VPN_CLIENT_PATH=/etc/wireguard/clients
-
-source $VPN_CLIENT_PATH/user.sh
+source config.sh
+source user.sh
 
 VPN_CLIENT_PATH=$VPN_CLIENT_PATH/$VPN_CLIENT_NAME
 
@@ -26,8 +23,7 @@ cat << EOF > $VPN_CLIENT_PATH/qrcode.sh
 qrencode -t ansiutf8 < $VPN_CLIENT_PATH/default.conf
 EOF
 
-chmod +x $VPN_CLIENT_PATH/qrcode.sh
-
+chmod 700 $VPN_CLIENT_PATH/qrcode.sh
 
 cat << EOF >> $VPN_SERVER_PATH/wg0.conf
 [Peer]

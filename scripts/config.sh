@@ -1,0 +1,7 @@
+EXTERNAL_INTERFACE=eth0
+
+VPN_SERVER_PATH=/etc/wireguard/server
+VPN_SERVER_CIDR=192.168.0.0/16
+VPN_SERVER_PORT=11940
+
+VPN_CLIENT_PATH=/etc/wireguard/clients
