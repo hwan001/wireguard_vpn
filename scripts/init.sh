@@ -34,6 +34,11 @@ cat << EOF > $VPN_SERVER_PATH/start.sh
 wg-quick up $VPN_SERVER_PATH/wg0.conf
 EOF
 
+cat << EOF > $VPN_SERVER_PATH/stop.sh
+wg-quick down $VPN_SERVER_PATH/wg0.conf
+EOF
+
+
 cat << EOF > $VPN_SERVER_PATH/restart.sh
 wg-quick down $VPN_SERVER_PATH/wg0.conf && wg-quick up $VPN_SERVER_PATH/wg0.conf
 EOF
